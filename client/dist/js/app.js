@@ -14818,6 +14818,12 @@ var Dashboard = function Dashboard(_ref) {
       ),
       '!',
       _react2.default.createElement('br', null),
+      _react2.default.createElement(
+        'strong',
+        null,
+        user.instrument
+      ),
+      _react2.default.createElement('br', null),
       secretData
     )
   );
@@ -15549,12 +15555,12 @@ var SignUpPage = function (_React$Component) {
    * @param {object} event - the JavaScript event object
    */
 
-
   _createClass(SignUpPage, [{
     key: 'processForm',
     value: function processForm(event) {
       var _this2 = this;
 
+      console.log(instrument);
       // prevent default action. in this case, action is the form submission event
       event.preventDefault();
 
@@ -15564,7 +15570,7 @@ var SignUpPage = function (_React$Component) {
       var email = encodeURIComponent(this.state.user.email);
       var password = encodeURIComponent(this.state.user.password);
       var formData = 'name=' + name + '&instrument=' + instrument + '&email=' + email + '&password=' + password;
-
+      console.log(instrument);
       // create an AJAX request
       var xhr = new XMLHttpRequest();
       xhr.open('post', '/auth/signup');

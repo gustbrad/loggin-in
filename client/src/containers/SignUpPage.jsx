@@ -31,7 +31,9 @@ class SignUpPage extends React.Component {
    *
    * @param {object} event - the JavaScript event object
    */
+  
   processForm(event) {
+    console.log(instrument)
     // prevent default action. in this case, action is the form submission event
     event.preventDefault();
 
@@ -41,7 +43,7 @@ class SignUpPage extends React.Component {
     const email = encodeURIComponent(this.state.user.email);
     const password = encodeURIComponent(this.state.user.password);
     const formData = `name=${name}&instrument=${instrument}&email=${email}&password=${password}`;
-
+console.log(instrument)
     // create an AJAX request
     const xhr = new XMLHttpRequest();
     xhr.open('post', '/auth/signup');
