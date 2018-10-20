@@ -28,14 +28,29 @@ function validateSignupForm(payload) {
     errors.password = 'Password must have at least 8 characters.';
   }
 
-  if (!payload || typeof payload.name !== 'string' || payload.name.trim().length === 0) {
+  if (!payload || typeof payload.firstName !== 'string' || payload.firstName.trim().length === 0) {
     isFormValid = false;
-    errors.name = 'Please provide your name.';
+    errors.name = 'Please provide your first name.';
   }
 
-  if (!payload) {
+  if (!payload || typeof payload.lastName !== 'string' || payload.lastName.trim().length === 0) {
+    isFormValid = false;
+    errors.name = 'Please provide your last name.';
+  }
+
+  if (!payload || typeof payload.instrument !== 'string' || payload.instrument.trim().length === 0) {
     isFormValid = false;
     errors.instrument = 'Please provide an instrument.';
+  }
+
+  if (!payload || typeof payload.experience !== 'string' || payload.experience.trim().length === 0) {
+    isFormValid = false;
+    errors.experience = 'Please provide your experience.';
+  }
+
+  if (!payload || typeof payload.videoLink !== 'string' || payload.videoLink.trim().length === 0) {
+    isFormValid = false;
+    errors.videoLink = 'Please provide your youtube vdeo link.';
   }
 
   if (!isFormValid) {

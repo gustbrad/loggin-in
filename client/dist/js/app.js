@@ -15080,11 +15080,22 @@ var SignUpForm = function SignUpForm(_ref) {
         'div',
         { className: 'field-line' },
         _react2.default.createElement(_TextField2.default, {
-          floatingLabelText: 'Name',
-          name: 'name',
-          errorText: errors.name,
+          floatingLabelText: 'First Name',
+          name: 'firstName',
+          errorText: errors.firstName,
           onChange: onChange,
-          value: user.name
+          value: user.firstName
+        })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'field-line' },
+        _react2.default.createElement(_TextField2.default, {
+          floatingLabelText: 'Last Name',
+          name: 'LastName',
+          errorText: errors.LastName,
+          onChange: onChange,
+          value: user.lastName
         })
       ),
       _react2.default.createElement(
@@ -15096,6 +15107,17 @@ var SignUpForm = function SignUpForm(_ref) {
           errorText: errors.instrument,
           onChange: onChange,
           value: user.instrument
+        })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'field-line' },
+        _react2.default.createElement(_TextField2.default, {
+          floatingLabelText: 'Experience',
+          name: 'experience',
+          errorText: errors.experience,
+          onChange: onChange,
+          value: user.experience
         })
       ),
       _react2.default.createElement(
@@ -15119,6 +15141,17 @@ var SignUpForm = function SignUpForm(_ref) {
           onChange: onChange,
           errorText: errors.password,
           value: user.password
+        })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'field-line' },
+        _react2.default.createElement(_TextField2.default, {
+          floatingLabelText: 'https://youtu.be/A71aqufiNtQ',
+          name: 'videoLink',
+          errorText: errors.videoLink,
+          onChange: onChange,
+          value: user.videoLink
         })
       ),
       _react2.default.createElement(
@@ -15538,8 +15571,11 @@ var SignUpPage = function (_React$Component) {
       errors: {},
       user: {
         email: '',
-        name: '',
+        firstName: '',
+        lastName: '',
         instrument: '',
+        experience: '',
+        videoLink: '',
         password: ''
       }
     };
@@ -15565,11 +15601,11 @@ var SignUpPage = function (_React$Component) {
       event.preventDefault();
 
       // create a string for an HTTP body message
-      var name = encodeURIComponent(this.state.user.name);
+      var firstName = encodeURIComponent(this.state.user.firstName);
       var instrument = encodeURIComponent(this.state.user.instrument);
       var email = encodeURIComponent(this.state.user.email);
       var password = encodeURIComponent(this.state.user.password);
-      var formData = 'name=' + name + '&instrument=' + instrument + '&email=' + email + '&password=' + password;
+      var formData = 'firstName=' + firstName + '&lastName=' + lastName + '&instrument=' + instrument + '&experience=' + experience + '&videoLink=' + videoLink + '&email=' + email + '&password=' + password;
       console.log(instrument);
       // create an AJAX request
       var xhr = new XMLHttpRequest();

@@ -20,11 +20,21 @@ const SignUpForm = ({
 
       <div className="field-line">
         <TextField
-          floatingLabelText="Name"
-          name="name"
-          errorText={errors.name}
+          floatingLabelText="First Name"
+          name="firstName"
+          errorText={errors.firstName}
           onChange={onChange}
-          value={user.name}
+          value={user.firstName}
+        />
+      </div>
+
+          <div className="field-line">
+        <TextField
+          floatingLabelText="Last Name"
+          name="LastName"
+          errorText={errors.LastName}
+          onChange={onChange}
+          value={user.lastName}
         />
       </div>
 
@@ -35,6 +45,16 @@ const SignUpForm = ({
           errorText={errors.instrument}
           onChange={onChange}
           value={user.instrument}
+        />
+      </div>
+
+      <div className="field-line">
+        <TextField
+          floatingLabelText="Experience"
+          name="experience"
+          errorText={errors.experience}
+          onChange={onChange}
+          value={user.experience}
         />
       </div>
 
@@ -56,6 +76,16 @@ const SignUpForm = ({
           onChange={onChange}
           errorText={errors.password}
           value={user.password}
+        />
+      </div>
+
+      <div className="field-line">
+        <TextField
+          floatingLabelText="https://youtu.be/A71aqufiNtQ"
+          name="videoLink"
+          errorText={errors.videoLink}
+          onChange={onChange}
+          value={user.videoLink}
         />
       </div>
 
