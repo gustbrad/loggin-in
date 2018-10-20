@@ -8,8 +8,11 @@ const UserSchema = new mongoose.Schema({
     index: { unique: true }
   },
   password: String,
-  name: String,
-  instrument: String
+  firstName: String,
+  lastName: String,
+  instrument: String,
+  experience: String,
+  videoLink: String
 });
 
 

@@ -16,8 +16,11 @@ class SignUpPage extends React.Component {
       errors: {},
       user: {
         email: '',
-        name: '',
+        firstName: '',
+        lastName: '',
         instrument: '',
+        experience: '',
+        videoLink: '',
         password: ''
       }
     };
@@ -38,11 +41,14 @@ class SignUpPage extends React.Component {
     event.preventDefault();
 
     // create a string for an HTTP body message
-    const name = encodeURIComponent(this.state.user.name);
+    const firstName = encodeURIComponent(this.state.user.firstName);
+    const lastName = encodeURIComponent(this.state.user.lastName);
     const instrument = encodeURIComponent(this.state.user.instrument);
+    const experience = encodeURIComponent(this.state.user.experience);
+    const videoLink = encodeURIComponent(this.state.user.videoLink);
     const email = encodeURIComponent(this.state.user.email);
     const password = encodeURIComponent(this.state.user.password);
-    const formData = `name=${name}&instrument=${instrument}&email=${email}&password=${password}`;
+    const formData = `firstName=${firstName}&lastName=${lastName}&instrument=${instrument}&experience=${experience}&videoLink=${videoLink}&email=${email}&password=${password}`;
 console.log(instrument)
     // create an AJAX request
     const xhr = new XMLHttpRequest();
